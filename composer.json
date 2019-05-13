@@ -9,6 +9,11 @@
             "email": "tadeufbarbosa@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "TeedShow//": "src/"
+        }
+    },
     "minimum-stability": "stable",
     "require": {
         "teedmaker/tmphp-server-info": "dev-master"
