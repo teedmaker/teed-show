@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "TeedShow//": "src/"
+            "TeedShow\\": "src/"
         }
     },
     "minimum-stability": "stable",
