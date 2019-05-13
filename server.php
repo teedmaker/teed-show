@@ -1,8 +1,5 @@
 <?php
 
-require_once 'errors.php';
-require_once 'defines.php';
-
 $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
 );
@@ -10,6 +7,9 @@ $uri = urldecode(
 if ($uri !== '/' && file_exists(__DIR__ .'/public'. $uri)) {
     return false;
 }
+
+require_once 'errors.php';
+require_once 'defines.php';
 
 $uri = trim($uri, '/');
 
