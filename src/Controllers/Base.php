@@ -16,6 +16,7 @@ class Base
             throw new Exception( "An error has occurred with this url!", 1);
         }
         ob_start();
+        extract($this->data);
         include $this->path;
         $content = ob_get_clean();
         $this->renderView($content);
