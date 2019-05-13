@@ -30,8 +30,6 @@ array_shift($request);
 
 //
 
-require_once 'includes.php';
-
 if(!file_exists("src/Controllers/{$controller}")) {
     $controller = "Error";
     $method     = 'notFound';
