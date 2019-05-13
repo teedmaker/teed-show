@@ -25,9 +25,5 @@ $method = lcfirst($method);
 
 array_shift($request);
 
-$data = $request;
-
-//
-
 $controller = new $controller;
-$response = call_user_func_array([$controller, $method], $data);
+$response = call_user_func_array([$controller, $method], $request);
