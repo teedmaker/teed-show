@@ -19,4 +19,9 @@ class Base
         echo $response;
         exit;
     }
+
+    public function renderJson(string $response) {
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
 }
