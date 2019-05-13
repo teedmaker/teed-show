@@ -10,6 +10,7 @@ if ($uri !== '/' && file_exists(__DIR__ .'/public'. $uri)) {
 
 require_once 'errors.php';
 require_once 'defines.php';
+require_once 'vendor/autoload.php';
 
 $uri = trim($uri, '/');
 
