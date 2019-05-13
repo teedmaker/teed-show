@@ -17,12 +17,23 @@ class Base
         ob_start();
         include $this->path;
         $content = ob_get_clean();
+        $this->renderView($content);
     }
 
     public function view(string $path) {
         $path = str_replace('.', '/', $path);
         $this->path = __DIR__ . "/../views/{$path}.php";
         return $this;
+    }
+
+    private function renderView(string $content) {
+        if(isset($this->template) && $this->template===false){
+            echo $content;
+            exit;
+        }
+        $template = isset($this->template) && file_exists(__DIR__."/../template/{$this->template}.php")? $this->template: 'default';
+        $template = __DIR__ . "/../templates/{$template}.php";
+        include $template;
     }
 
     private function renderString(string $response) {
