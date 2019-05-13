@@ -31,7 +31,7 @@ array_shift($request);
 
 //
 
-if(!file_exists("src/Controllers/{$controller}")) {
+if(!file_exists("src/Controllers/{$controller}.php")) {
     $controller = "Error";
     $method     = 'notFound';
 }
