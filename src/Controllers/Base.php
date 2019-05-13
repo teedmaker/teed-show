@@ -11,11 +11,12 @@ class Base
         if(is_string($response)) {
             return $this->renderString($response);
         }
-        if($this->path !== null) {
-            ob_start();
-            include $this->path;
-            $content = ob_get_clean();
+        if($this->path === null) {
+            throw new Exception( "An error has occurred with this url!", 1);
         }
+        ob_start();
+        include $this->path;
+        $content = ob_get_clean();
     }
 
     public function view(string $path) {
