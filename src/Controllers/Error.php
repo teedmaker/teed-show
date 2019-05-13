@@ -2,7 +2,7 @@
 
 namespace TeedShow\Controllers;
 
-class Error
+class Error extends Base
 {
     public function notFound() {
         return 'Essa página não existe!';

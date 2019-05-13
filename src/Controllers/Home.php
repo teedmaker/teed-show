@@ -2,7 +2,7 @@
 
 namespace TeedShow\Controllers;
 
-class Home
+class Home extends Base
 {
     public function index() {
         return 'Hello world!';
