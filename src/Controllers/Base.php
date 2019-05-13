@@ -33,11 +33,11 @@ class Base
     }
 
     private function renderView(string $content) {
+        extract($this->data);
         if(isset($this->template) && $this->template===false){
             echo $content;
             exit;
         }
-        extract($this->data);
         $template = isset($this->template) && file_exists(__DIR__."/../template/{$this->template}.php")? $this->template: 'default';
         $template = __DIR__ . "/../templates/{$template}.php";
         include $template;
