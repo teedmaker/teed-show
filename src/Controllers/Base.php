@@ -4,9 +4,8 @@ namespace TeedShow\Controllers;
 
 class Base
 {
-    public function run($object) {
-        if(\is_string($object)) {
-            echo $object;
-        }
+    public function execute(string $method, array $data=[]) {
+        $response = call_user_func_array([$this, $method], $data);
+        var_dump($response);
     }
 }

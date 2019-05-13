@@ -38,4 +38,4 @@ if(!file_exists("src/Controllers/{$controller}.php")) {
 
 $controller = "TeedShow\\Controllers\\{$controller}";
 $controller = new $controller;
-$response = call_user_func_array([$controller, $method], $request);
+$controller->execute($method, $request);
