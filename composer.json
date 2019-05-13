@@ -11,5 +11,6 @@
     ],
     "minimum-stability": "stable",
     "require": {
+        "teedmaker/tmphp-server-info": "dev-master"
     }
 }
