@@ -5,6 +5,7 @@ namespace TeedShow\Controllers;
 class Base
 {
     private $path = null;
+    private $data = [];
 
     public function execute(string $method, array $data=[]) {
         $response = call_user_func_array([$this, $method], $data);
@@ -26,11 +27,17 @@ class Base
         return $this;
     }
 
+    public function with(string $title, $value) {
+        $this->data[$title] = $value;
+        return $this;
+    }
+
     private function renderView(string $content) {
         if(isset($this->template) && $this->template===false){
             echo $content;
             exit;
         }
+        extract($this->data);
         $template = isset($this->template) && file_exists(__DIR__."/../template/{$this->template}.php")? $this->template: 'default';
         $template = __DIR__ . "/../templates/{$template}.php";
         include $template;
